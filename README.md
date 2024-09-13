@@ -19,27 +19,52 @@ Features already available in the software:
  ## Pre Requirements ‼️
 
 - It is necessary install [Npm](https://docs.npmjs.com/cli/v7/commands/npm-install)
-- This project use Node[https://nodejs.org/en] version ???
-
-This project use node version 22.2.0.
+- This project use Node[https://nodejs.org/en] version 21.1.0
 
 ## How to Install ⚙️
 
-To install in developer mode, follow the step-by-step:
+To install the app, follow the step-by-step:
 
 1. Clone the repository on your computer
-```
+  ```
     git clone <repository_url>
-```
+  ```
 
- 2. Access the directory where you downloaded this project and run the command below *install dependencies*
-   ```
+ 2. Access the directory where you downloaded this project and run the command below to *install dependencies*
+  ```
     npm install or npm i
+  ```
+
+ 3. Ensure that you have all the required Android libraries:
+  ```
+    cd android
+    ./gradlew installDebug
+  ```
+
+Important: even thought React Native is hybrid, this app is only configured to work on Android devices.
+
+## Firebase Configuration
+This project uses Firebase to handle sign-up and sign-in processes. Before you configure Firebase in your project, you need to set up a Firebase project and obtain your Firebase credentials. You can simply follow the steps on [Firebase Console](https://console.firebase.google.com/u/0/).
+
+Once that is done:
+
+
+1. Create a file named .env to store your Firebase configuration securely in the root directory of your project.
+
+2. Open the .env file and add the configuration details you obtained from Firebase. Add all the values with your Firebase project credentials:
 ```
+   API_KEY=
+   AUTH_DOMAIN=
+   PROJECT_ID=
+   STORAGE_BUCKET=
+   MESSAGING_SENDER_ID=
+   APP_ID=
+```
+Alternatively, you can rename the ``.example.env`` to ``.env`` and file and fill out the variables.
 
- ## How to Run 🕹
+## How to Run 🕹
 
-Run the project
+To run the project simply:
 ```
 % npx react-native run-android
 ```
